@@ -8,7 +8,7 @@ const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const REDIRECT_URI = process.env.REDIRECT_URI;
 const AUTH_URL = 'https://app.mural.co/api/public/v1/authorization/oauth2/';
 const TOKEN_URL = 'https://app.mural.co/api/public/v1/authorization/oauth2/token';
-const SCOPE = 'templates:read';
+const SCOPE = 'rooms:read';
 const STATE = 'random_state_123';
 
 // Step 1: Start OAuth flow
