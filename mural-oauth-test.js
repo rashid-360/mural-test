@@ -9,7 +9,7 @@ const REDIRECT_URI = process.env.REDIRECT_URI;
 const AUTH_URL = 'https://app.mural.co/api/public/v1/authorization/oauth2/';
 const TOKEN_URL = 'https://app.mural.co/api/public/v1/authorization/oauth2/token';
 const SCOPE = 'templates:read';
-const STATE = 'random_state_123'; // Normally you'd generate this
+const STATE = 'random_state_123';
 
 // Step 1: Start OAuth flow
 app.get('/login', (req, res) => {
@@ -21,9 +21,6 @@ app.get('/login', (req, res) => {
 app.get('/callback', async (req, res) => {
   const { code, state } = req.query;
 
-  if (state !== STATE) {
-    return res.status(400).send('State mismatch.');
-  }
 
 
   const data = new URLSearchParams({
